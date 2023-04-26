@@ -1,0 +1,20 @@
+body {
+    background: conic-gradient(from .5turn at 50% 110%, white, orange);
+    overflow: hidden;
+    background-repeat: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    border: 1px solid black;
+    display: block;
+    width: 700px;
+    height: 600px;
+}
+
+.container h2 {
+    margin: auto;
+}
