@@ -16,6 +16,9 @@
             <input type="text" placeholder="enter city name" spellcheck="false">
             <button><img src="images/search.png"></button>
         </div>
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
         <div class="weather">
             <img src="images/rain.png" class="weather-icon">
             <h1 class="temp">22°c</h1>
@@ -39,31 +42,7 @@
         </div>
     </div>
 
-    <script sr>
-        const apiKey = "a5765e5cb4c07c1e0ad906d96ee4ca30";
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
-
-        const searchBox = document.querySelector(".search input")
-        const searchBtn = document.querySelector(".search button")
-
-        async function checkWeather(city){
-            const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-            var data = await response.json();
-
-            console.log(data);
-
-            document.querySelector(".city").innerHTML = data.name;
-            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
-            document.querySelector(".humidity").innerHTML = data.main.humidity + " %";
-            document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-        }
-
-        searchBtn.addEventListener("click", () => {
-            checkWeather();
-        })
-
-        checkWeather();
-
+    <script src="script.js">
     </script>
 </body>
 
